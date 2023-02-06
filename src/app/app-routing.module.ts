@@ -11,6 +11,21 @@ const routes: Routes = [
     redirectTo: 'home',
     pathMatch: 'full'
   },
+  {
+    path: 'page',
+    loadChildren: () => import('./page/page.module').then( m => m.PagePageModule)
+  },
+  
+  {
+    path: 'contato',
+    loadChildren: () => import('./page/contato/contato.module').then( m => m.ContatoPageModule)
+  },
+
+  {
+    path: 'form',
+    loadChildren: () => import('./page/form/form.module').then( m => m.FormPageModule)
+  },
+
 ];
 
 @NgModule({
