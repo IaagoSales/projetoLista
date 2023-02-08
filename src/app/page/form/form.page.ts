@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { Produto } from 'src/app/model/produto';
 
 @Component({
   selector: 'app-form',
@@ -29,7 +30,7 @@ export class FormPage implements OnInit {
 
     if(this.routerId){
       // Se o id do produto for encontrado, Ativa o banco de dados
-      this.banco.getOneItem(this.routerId).subscribe(caixa => { this.produto = caixa } );
+      //this.banco.getOneItem(this.routerId).subscribe(caixa => { this.produto = caixa } );
 
     }
 
@@ -40,12 +41,12 @@ export class FormPage implements OnInit {
 
   update(form: any){
 
-    this.banco.updateItem(form.value, this.routerId);
-    this.router.navigate[''];
-    this.util.tostando("Item Atualizado com sucesso", "middle", 2000, "medium");
+    //this.banco.updateItem(form.value, this.routerId);
+    //this.router.navigate[''];
+    //this.util.tostando("Item Atualizado com sucesso", "middle", 2000, "medium");
 
   }
 
-  declations: [FormPage]
+  //declations: [FormPage]
 
-})
+}
