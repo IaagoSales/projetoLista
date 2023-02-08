@@ -14,7 +14,10 @@
 
   
 
-    <form action="">
+    <form #form="ngForm" (ngSubmit)="update(form)">
+
+      
+
 
       <ion-item>
 
@@ -22,7 +25,7 @@
 
         <ion-label> Item: </ion-label>
 
-        <ion-input type="text" name="produto" placeholder="Nome Produto"></ion-input>
+        <ion-input type="text" name="produto" [ngModel] = "produto.produto" placeholder="Nome Produto"></ion-input>
 
       </ion-item>
       
@@ -33,7 +36,10 @@
 
         <ion-label> Item: </ion-label>
 
-        <ion-input type="text" name="produto" placeholder="Quantidade Produto"></ion-input>
+        <ion-input type="text" name="produto" [ngModel] = "produto.quantidade" placeholder="Quantidade Produto"></ion-input>
+
+
+        <ion-button type="submit" color="success" expand="block"> Atualizar </ion-button>
 
       </ion-item>
 
