@@ -23,6 +23,10 @@ const routes: Routes = [
   {
     path: 'sobre',
     loadChildren: () => import('./sobre/sobre.module').then( m => m.SobrePageModule)
+  },
+   {
+    path: 'footer',
+    loadChildren: () => import('./footer/footer.module').then( m => m.FooterPageModule)
   }
 ];
 
