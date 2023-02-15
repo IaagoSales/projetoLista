@@ -26,6 +26,11 @@ const routes: Routes = [
     loadChildren: () => import('./page/form/form.module').then( m => m.FormPageModule)
   },
 
+  {
+    path: 'footer',
+    loadChildren: () => import('./page/footer/footer.module').then( m => m.FooterPageModule)
+  },
+
 ];
 
 @NgModule({
