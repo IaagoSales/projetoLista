@@ -1,4 +1,4 @@
-<ion-header>
+<ion-header [translucent] = "true">
 
   <ion-toolbar color="dark" mode="ios">
 
@@ -13,6 +13,52 @@
 
   <ion-img src="/assets/photos/img1.png" ></ion-img>
 
+  <ion-list>
 
+      <ion-item-sliding *ngFor = "let produto of listaProdutos">
+
+        <ion-item (click)="actionMetod(produto)">
+
+            <ion-icon name="radio-button-off" *ngIf = "!produto.status"></ion-icon>
+
+            <ion-label *ngIf = "!produto.status">
+
+              <strong>Produto:</strong>
+
+              {{produto.produto}}
+
+
+            </ion-label>
+
+            <ion-label *ngIf = "!produto.status">
+
+              <strong>Quantidade:</strong>
+
+              {{produto.produto}}
+
+
+            </ion-label>
+
+
+        </ion-item>
+
+        <ion-toolbar color="dark" mode="ios">
+
+              <ion-item-option color="blue" (click)="deletar(produto.id)">
+
+                  <ion-icon name="trash-outline"></ion-icon>
+
+              </ion-item-option>
+
+            <ion-item-option color="success" [routerLink]="['/form, produto.id']"></ion-item-option>
+
+            <ion-icon name="refresh-outline"></ion-icon>
+
+        </ion-toolbar>
+
+      </ion-item-sliding>
+
+      
+  </ion-list>
 
 </ion-content>
