@@ -59,5 +59,16 @@ HttpOptions = {
   }
 
 
+  //Método para cadastrar um item 
+
+  posItem(dados: any){
+
+    return this.http.post(
+      this.API, JSON.stringify(dados),
+      this.HttpOptions).subscribe()
+    
+
+  }
+
 
 }
