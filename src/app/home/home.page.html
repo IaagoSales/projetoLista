@@ -1,4 +1,6 @@
-<ion-header>
+
+
+<ion-header [translucent] = "true">
 
 <ion-toolbar  color="dark" mode="ios">
 
@@ -11,11 +13,11 @@
 
 <ion-content [fullscreen] = "true">
 
-  <ion-img [src]="/src/assets/shapes.svg"></ion-img>
+  <!-- <ion-img [src]="/src/assets/shapes.svg"></ion-img> -->
 
 
 
-<ion-list>
+  <ion-list>
 
 
     <ion-item-sliding *ngFor = "let produto 
@@ -40,7 +42,7 @@
 
         <strong>Quantidade: </strong>
 
-        {{produto.Quantidade}} 
+        {{produto.quantidade}} 
 
       </ion-label>
 
@@ -62,7 +64,7 @@
 
         <del>
             <strong> Quantidade:</strong>
-            {{produto.Quantidade}}
+            {{produto.quantidade}}
         </del>
       </ion-label>
       
@@ -73,7 +75,8 @@
 
 
 
-
+<!-- Esse bloco disponibiliza na interface -->
+<!-- Recursos para apagar um item na lista -->
   <ion-toolbar color="dark" mode="ios">
 
     <ion-item-option color="danger" 
@@ -83,6 +86,8 @@
     <ion-icon name="trash-outline"></ion-icon>
   
   </ion-item-option>
+
+  <!-- Bloco atualiza a página após o item ser apagado  -->
 
   <ion-item-option color="success" 
   [routerLink]="['/form, produto.id']">
@@ -101,3 +106,5 @@
 
 
   </ion-content>
+
+
